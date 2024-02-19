@@ -1,14 +1,16 @@
+//Importar biblioteca de entrada e saída
 import 'dart:io';
-
+// Criação de uma classe e seus atributos
 class Produto {
   int codigo;
   String descricao;
   double preco;
-
+// Método construtor da classe
   Produto(this.codigo, this.descricao, this.preco);
 }
 
 void main() {
+  // Criando uma lista do tipo da classe Produto
   List<Produto> Produtos = [];
 
   // Cadastro dos produtos
@@ -20,7 +22,7 @@ void main() {
     String descricao = stdin.readLineSync()!;
     print('Preço:');
     double preco = double.parse(stdin.readLineSync()!);
-
+    // Adicionando cada dado inserido à lista
     Produtos.add(Produto(codigo, descricao, preco));
   }
 
@@ -39,11 +41,11 @@ void main() {
   }
 
   // Busca binária
-  int binaryComparisons = 0;
+  int comparacaoBinaria = 0;
   int low = 0;
   int high = Produtos.length - 1;
   while (low <= high) {
-    binaryComparisons++;
+    comparacaoBinaria++;
     int mid = (low + high) ~/ 2;
     if (Produtos[mid].codigo == buscaCodigo) {
       print('Produto encontrado usando busca binária');
@@ -55,6 +57,6 @@ void main() {
     }
   }
 
-  print('Comparisons (Sequential): $buscaSequencial');
-  print('Comparisons (Binary): $binaryComparisons');
+  print('Comparações (Sequencial): $buscaSequencial');
+  print('Comparações (Binária): $comparacaoBinaria');
 }
