@@ -1,6 +1,7 @@
 void main() {
+  //Declaração e incialização dos vetores
   List<double> salarios = [1200, 1000, 600, 1100, 900];
-
+  
   List<String> nomes = ["Maria", "Joao", "Antonia", "Sandra", "Jeova"];
   salarios.sort();
   print(salarios);
